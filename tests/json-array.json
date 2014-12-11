@@ -1,0 +1,34 @@
+
+[
+  {
+  	"type": "repeat 100",
+  	"data": [
+	  {
+	    "id": "{{integer 0 10}}",
+	    "gender": "{{gender}}",
+	    "student_id": "{{integer 1 10000}}",
+	    "is_erasmus": "{{boolean 0.03}}",	// 3% chance to be an Erasmus student
+	    "from_type": "function() { \n" +
+	      "prob = Math.floor((Math.random() * 100) + 0); \n"+ 
+	      "if(prob <= 25) return 'SouthTyrol'; //25% from South Tyrol \n"+
+	      "if(prob <= 40) return 'Italy';      //15% from Italy, outside South Tyrol \n"+
+	      "if(prob <= 80) return 'EU';         //40% from EU, outside Italy \n"+
+	      "return 'non-EU';                    //20% from non-EU countries \n"+
+	    "}",
+	    "country": "Germany",
+	    "mother_tongue": "German",
+	    "city": "Düsseldorf",
+	    "province": null,
+	    "region": null,
+	    "is_south_tyrolean": false,
+	    "is_italy": false,
+	    "is_european_union": true,
+	    "birthday_exact": "{{date 1960-01-01 1995-12-31 yyyy-MM-dd}}",
+	    "birthday_month": 7,
+	    "birthday_year": 1992
+	  }
+	]
+  },
+  [1,2],
+  [2,3]
+]
